@@ -88,11 +88,10 @@ class LinkedList {
                 $next2 = $curr2->getNext();
                 $curr1->setNext($curr2);
                 $curr2->setNext($next1);  
-
                 $curr1 = $curr2;
 		$curr2 = $next2;
             } else {
-                if ($next1->getNext() != null) {//next1がnullでないときが条件
+                if ($next1->getNext() != null) { //next1がnullでないときが条件
 	            $next1 = $next1->getNext();
 	            $curr1 = $curr1->getNext();
 	        } else {
