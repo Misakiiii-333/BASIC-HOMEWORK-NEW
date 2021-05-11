@@ -38,9 +38,7 @@ class Node {
     {
         $this->prev = $prev;
     }
-    
 } 
-
 class LinkedList { 
     /** @var Node  head node */
     private $head;
@@ -60,16 +58,14 @@ class LinkedList {
             $newNode->setPrev($last); //新しいノードをlastに設定
         }
     }
-   
     public function deleteAll($data)
     {
         if ($this->head == null) { // linked list is empty
             echo "List is empty.";
             return;
         }
-
         $current = $this->head;
-
+	    
         while ($current->getNext() != null)
         {
             if ($current->getNext()->getData() == $data)
@@ -80,7 +76,6 @@ class LinkedList {
             }
         }
     }
-
     public function visit()
     {
         $currNode = $this->head;
@@ -91,7 +86,6 @@ class LinkedList {
             $currNode = $currNode->getNext();
         }
     }
-
     public function reverse()
     {
 		$preNode = null;
