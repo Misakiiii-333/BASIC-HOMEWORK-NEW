@@ -73,7 +73,6 @@ class LinkedList {
             }
         }
     }
-
     public function visit()
     {
         $currNode = $this->head;
@@ -84,7 +83,6 @@ class LinkedList {
             echo $currNode->getData() . " ";
             $currNode = $currNode->getNext();
         }
-       
     }
 }
 
@@ -103,6 +101,5 @@ echo "<br>";
 
 $list->deleteAll(10);
 $list->visit();
-
 
 ?>
