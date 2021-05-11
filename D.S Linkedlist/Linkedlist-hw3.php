@@ -1,4 +1,4 @@
-<?
+<?php
 class Node {
    
     private $data;
@@ -77,11 +77,10 @@ class LinkedList {
             $n1->head->setNext($n2);
             return $n1;
         }
-    
-        $curr1 = $n1->head;
-        $next1 = $n1->head->getNext();
-        $curr2 = $n2->head;
-        $next2 = $n2->head->getNext();
+            $curr1 = $n1->head;
+            $next1 = $n1->head->getNext();
+            $curr2 = $n2->head;
+            $next2 = $n2->head->getNext();
 
         while ($next1 != null && $curr2 != null) { //next1とcurr2両方がnullでないときが条件
             if (($curr2->getData()) >= ($curr1->getData()) && ($curr2->getData()) <= ($next1->getData())) {
@@ -89,17 +88,18 @@ class LinkedList {
                 $curr1->setNext($curr2);
                 $curr2->setNext($next1);  
                 $curr1 = $curr2;
-		$curr2 = $next2;
+	        $curr2 = $next2;
+
             } else {
-                if ($next1->getNext() != null) { //next1がnullでないときが条件
-	            $next1 = $next1->getNext();
-	            $curr1 = $curr1->getNext();
+                if ($next1->getNext() != null) {//next1がnullでないときが条件
+	             $next1 = $next1->getNext();
+	             $curr1 = $curr1->getNext();
 	        } else {
 		    $next1->setNext($curr2);
-	            return $n1;
+		    return $n1;
 	        }
             }
-        }
+        }  
         return $n1;
     }
 }
