@@ -34,7 +34,7 @@ class Node {
     {
         return $this->prev;
     }
-    public function setPrev()
+    public function setPrev($prev)
     {
         $this->prev = $prev;
     }
@@ -117,7 +117,7 @@ $list->insert(5);
 
 $list->visit(); 
 
-//$list->reverse(); 
+$list->reverse(); 
 $list->visit();
 
 
