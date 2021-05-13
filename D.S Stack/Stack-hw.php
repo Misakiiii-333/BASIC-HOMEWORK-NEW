@@ -24,7 +24,7 @@ class Stack {
         if (!$this->isEmpty()) {//要素が空でないことを確認
             return $this->elements[sizeof($this->elements) - 1];//配列の要素数を指定
         } else {
-        return null;
+            return null;
         }
     }
 
