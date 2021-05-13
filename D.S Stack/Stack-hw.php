@@ -49,7 +49,7 @@ function removeCoupleOfWords($words)
             $str = $stack->top(); //$str(string):文字列
             if ($words[$i] == $str) { 
                 $stack->pop(); //そのstackは消去する
-            } else { // otherwise push the current string
+            } else { 
                 $stack->push($words[$i]);
             }
         }
@@ -59,5 +59,5 @@ function removeCoupleOfWords($words)
 
 //実行する
 $words = ["ab", "aa", "aa", "bcd", "ab"];
-echo removeCoupleOfWords($words);
-?>
+echo removeCoupleOfWords($words); //result:3
+?> 
