@@ -70,12 +70,12 @@ class Queue {
         print_r($this->elements);
         print_r($this->dependentList);
         
-        for($i = $n - 1; $i >= 0;    ){
+        for($i = $n - 1; $i >= 0;    ) {
             echo "\n"."i = ".$i."\n";
             echo "elements[i] = ".$this->elements[$i]."\n";
             echo "dependentList = ".$this->dependentList[$i]."\n";
             
-            if($this->elements[$i] == $this->dependentList[$i]){ //優先順位通りに仕事が手元に来た時
+            if($this->elements[$i] == $this->dependentList[$i]) { //優先順位通りに仕事が手元に来た時
                 $hour = $hour + 2; //仕事にかかる時間は2時間
                 $this->dequeue(); //仕事が実行されたら消去(dequenceされますよ)
                 $this->deleteDependentList();
