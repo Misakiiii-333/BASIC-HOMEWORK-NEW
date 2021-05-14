@@ -55,6 +55,5 @@ $queue->dequeue();
 while (!$queue->isEmpty()) {
     echo $queue->front() . " ";
     $queue->dequeue();
-
 }
 ?>
