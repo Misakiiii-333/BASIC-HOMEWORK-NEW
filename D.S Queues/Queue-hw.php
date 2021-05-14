@@ -70,7 +70,7 @@ class Queue {
         print_r($this->elements);
         print_r($this->dependentList);
         
-        for($i = $n - 1; $i >= 0;    ) {
+        for($i = $n - 1; $i >= 0;) {
             echo "\n"."i = ".$i."\n";
             echo "elements[i] = ".$this->elements[$i]."\n";
             echo "dependentList = ".$this->dependentList[$i]."\n";
