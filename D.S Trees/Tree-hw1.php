@@ -210,14 +210,14 @@ class SearchBinaryTree extends BinaryTree {
     }
 
     public function getMaxelement() {
-        $currentNode = $this->root;//現在いる地点
+        $currentNode = $this->root; //spot where you are now
         while(true){
             if($currentNode->getRight() == null){
-                $maxdata = $currentNode->getData(); //getData(データの値)をかえす
+                $maxdata = $currentNode->getData(); //return getData (data value)
                 break;
             } else {
                 // $maxdata = $node->getRight()->getData();
-                $currentNode = $currentNode->getRight(); //右下のnodeに視点を移す
+                $currentNode = $currentNode->getRight(); //Shift your viewpoint to the bottom Right node. 
             }
             
         }
@@ -225,13 +225,13 @@ class SearchBinaryTree extends BinaryTree {
         return $maxdata;
     }  
     public function getMinimumelement() {
-        $currentNode = $this->root;//現在いる地点
+        $currentNode = $this->root;//spot where you are now
         while(true){
             if($currentNode->getLeft() == null){
-                $mindata = $currentNode->getData(); //getData(データの値)をかえす
+                $mindata = $currentNode->getData(); //return getData (data value)
                 break;
-            } else { //データがある時
-                $currentNode = $currentNode->getLeft(); //左下のnodeに視点を移す                
+            } else { 
+                $currentNode = $currentNode->getLeft(); //Shift your viewpoint to the bottom left node.                
             }
         }
         echo $mindata."\n";
