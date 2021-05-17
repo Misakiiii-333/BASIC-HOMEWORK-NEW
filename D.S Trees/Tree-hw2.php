@@ -100,7 +100,7 @@ Class BinaryTree { //BinaryTree class
                 break;
             }
         }
-        $i = 0;
+        $i = 0; //initialization
         while ($i < count($this->arr)) {
             $current = $this->arr[$i];
             if($current->getLeft() === null) { 
@@ -112,7 +112,7 @@ Class BinaryTree { //BinaryTree class
                 array_push($this->arr,$current->getRight());
                 break;
             } else {
-                $i++;
+                $i++; 
             }
         }
     }
