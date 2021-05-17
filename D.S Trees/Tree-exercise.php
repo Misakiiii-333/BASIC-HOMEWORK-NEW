@@ -173,41 +173,31 @@ class BinaryTree {
    
 class SearchBinaryTree extends BinaryTree {
     public function insert($data) {
-              
-		if($this->root == NULL) {
-
-		$this->root = new Node($data);
-
-		} else {
-
-			$current = $this->root;
-
-			while(true) {
-
-					if($data < $current->getData()) {
-					
-						if($current->getLeft()) {
-							$current = $current->getLeft();
-						} else {
-							$current->setLeft(new Node($data));
-							break; 
-						}
-
-					} else if($data > $current->getData()){
-
-						if($current->getRight()) {
-							$current = $current->getRight();
-						} else {
-							$current->setRight(new Node($data));
-							break; 
-						}
-
-					} else {
-						break;
-					}
-			} 
-		}
-    }
+        if($this->root == NULL) {
+            $this->root = new Node($data);
+        } else {
+	    $current = $this->root;
+	    while(true) {
+                if($data < $current->getData()) {					
+	            if($current->getLeft()) {
+		        $current = $current->getLeft();
+		    } else {
+		        $current->setLeft(new Node($data));
+		        break; 
+		    }
+	      } else if($data > $current->getData()) {
+	          if($current->getRight()) {
+	              $current = $current->getRight();
+	          } else {
+		      $current->setRight(new Node($data));
+		      break; 
+	          }
+	      } else {
+	          break;
+	      }
+	  } 
+      }
+}
     public function search($value) {
         $node = $this->root;
             while($node){
