@@ -124,26 +124,26 @@ Class BinaryTree { //BinaryTree class
         array_push($this->arr,$data);
     }
 }
-        $leaf1 = new Node(7);
-        $leaf2 = new Node(15);
-        $leaf3 = new Node(8);
+$leaf1 = new Node(7);
+$leaf2 = new Node(15);
+$leaf3 = new Node(8);
         
-        $parent1 = new Node(11, $leaf1); //I want to add a leaf(12) under this
-        $parent2 = new Node(9, $leaf2, $leaf3); 
-        $parent3 = new Node(10, $parent1,$parent2); 
-        $root = $parent3; //Define root
-        $bt = new BinaryTree($root);
+$parent1 = new Node(11, $leaf1); //I want to add a leaf(12) under this
+$parent2 = new Node(9, $leaf2, $leaf3); 
+$parent3 = new Node(10, $parent1,$parent2); 
+$root = $parent3; //Define root
+$bt = new BinaryTree($root);
         
         
-        $bt->arrayPush($leaf1);
-        $bt->arrayPush($leaf2);
-        $bt->arrayPush($leaf3);
-        $bt->arrayPush($parent1->getRight());
-        $bt->arrayPush($parent1);
-        $bt->arrayPush($parent2);
-        $bt->arrayPush($parent3);
+$bt->arrayPush($leaf1)
+$bt->arrayPush($leaf2);
+$bt->arrayPush($leaf3);
+$bt->arrayPush($parent1->getRight());
+$bt->arrayPush($parent1);
+$bt->arrayPush($parent2);
+$bt->arrayPush($parent3);
         
-        $bt->addNewdata(12); //add leaf(12)
-        $bt->showTheTree();
+$bt->addNewdata(12); //add leaf(12)
+$bt->showTheTree();
         
-        ?>
+?>
