@@ -128,10 +128,10 @@ Class BinaryTree { //BinaryTree class
         $leaf2 = new Node(15);
         $leaf3 = new Node(8);
         
-        $parent1 = new Node(11, $leaf1); //この下にleaf(12)を追加したい
+        $parent1 = new Node(11, $leaf1); //I want to add a leaf(12) under this
         $parent2 = new Node(9, $leaf2, $leaf3); 
         $parent3 = new Node(10, $parent1,$parent2); 
-        $root = $parent3;
+        $root = $parent3; //Define root
         $bt = new BinaryTree($root);
         
         
