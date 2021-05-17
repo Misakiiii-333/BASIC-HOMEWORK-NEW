@@ -82,14 +82,14 @@ Class BinaryTree { //BinaryTree class
         $this->arr = $arr;
     }
 
-    public function getRoot() {
+    public function getRoot() { //rootを得る為に
         return $this->root;
     }
-    public function setRoot($root) {
+    public function setRoot($root) { //set Root 
         $this->root = $root;
     }
 
-    public function addNewData($newNumber) { //add new data
+    public function addNewData($newNumber) { //add new data($newNumber)
         if ($this->root === null) { //root = null
             $this->root = new Node($newNumber);
             return;
@@ -100,7 +100,7 @@ Class BinaryTree { //BinaryTree class
                 break;
             }
         }
-        $i = 0; //initialization
+        $i = 0; //初期化
         while ($i < count($this->arr)) {
             $current = $this->arr[$i];
             if($current->getLeft() === null) { 
@@ -112,7 +112,7 @@ Class BinaryTree { //BinaryTree class
                 array_push($this->arr,$current->getRight());
                 break;
             } else {
-                $i++; 
+                $i++;
             }
         }
     }
@@ -128,22 +128,13 @@ $leaf1 = new Node(7);
 $leaf2 = new Node(15);
 $leaf3 = new Node(8);
         
-$parent1 = new Node(11, $leaf1); //I want to add a leaf(12) under this
+$parent1 = new Node(11, $leaf1); //この下にleaf(12)を追加したい
 $parent2 = new Node(9, $leaf2, $leaf3); 
 $parent3 = new Node(10, $parent1,$parent2); 
-$root = $parent3; //Define root
+$root = $parent3;
 $bt = new BinaryTree($root);
-        
-        
-$bt->arrayPush($leaf1)
-$bt->arrayPush($leaf2);
-$bt->arrayPush($leaf3);
-$bt->arrayPush($parent1->getRight());
-$bt->arrayPush($parent1);
-$bt->arrayPush($parent2);
-$bt->arrayPush($parent3);
         
 $bt->addNewdata(12); //add leaf(12)
 $bt->showTheTree();
-        
+      
 ?>
