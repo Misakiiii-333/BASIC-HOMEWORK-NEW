@@ -161,7 +161,7 @@ Class BinaryTree { //BinaryTree classの作成
 
 
     public function addNewData($newNumber) { //add new data
-        if ($this->root === null) { //root = nullの時
+        if ($this->root === null) { //root = null
             $this->root = new Node($newNumber);
             return;
         }
@@ -178,8 +178,8 @@ Class BinaryTree { //BinaryTree classの作成
                 $current->setLeft(new Node($newNumber));
                 array_push($this->arr,$current->getLeft());
                break;
-            } elseif($current->getRight() === null) { //右のノードが空の時
-                $current->setRight(new Node($newNumber)); //右のノードにnew nodeを追加
+            } elseif($current->getRight() === null) { 
+                $current->setRight(new Node($newNumber)); //add new node
                 // $current->setRight($node);
                 array_push($this->arr,$current->getRight());
                 break;
@@ -188,19 +188,19 @@ Class BinaryTree { //BinaryTree classの作成
             }
         }
     }
-    public function showTheTree() { //treeを表示する
+    public function showTheTree() { 
         print_r($this->root);
     }
     
     public function arrayPush($newNode) {
-        array_push($this->arr,$newNode); //配列に要素を追加
+        array_push($this->arr,$newNode); //Add an element to the array
     }
 
 
     public function makeTree($node) {
-        $currentNode = $this->root; //現在のNode
+        $currentNode = $this->root; //current Node
         array_push($this->nodeArray, $node->getData());
-        $count = count($this->nodeArray); //ノードの個数
+        $count = count($this->nodeArray); //Number of nodes
         echo "COUNT: ".count($this->nodeArray)."\n";
         $j = 0;
         while(true){
@@ -211,7 +211,7 @@ Class BinaryTree { //BinaryTree classの作成
             $j++;
         }
         echo "NUM: ".$num."\n";
-        $now = 1; //現在の階層
+        $now = 1; //Current hierarchy
         $this->check = true; 
         $this->addLeaf($num, $now, $currentNode, $node);
 
@@ -219,22 +219,22 @@ Class BinaryTree { //BinaryTree classの作成
 
     public function addLeaf($num, $now, $currentNode, $node) {
         if($now != $num){
-            //まずは右からすべて見ていく
+            //look at everything from the right first.
             if($this->check && $currentNode->getRight() != null){
                 $this->addLeaf($num , $now + 1, $currentNode->getRight(), $node);
             }
-            //左をすべて見ていく
+            //look all the way to the left.
             if($this->check && $currentNode->getLeft() != null){    
                 $this->addLeaf($num, $now + 1, $currentNode->getLeft(), $node);
             }
         }else{
-            //まずは右からすべて見ていく
+            //look at everything from the right first.
             if($currentNode->getRight() == null){
                 $this->check = false;
                 $currentNode->setRight($node);
                 return;
             }
-            //左をすべて見ていく
+            //look all the way to the left.
             else if($currentNode->getLeft() == null){
                 $this->check = false;
                 $currentNode->setLeft($node);
