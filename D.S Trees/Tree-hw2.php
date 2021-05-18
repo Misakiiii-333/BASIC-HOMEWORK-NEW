@@ -101,15 +101,7 @@ Class BinaryTree { //BinaryTree classの作成
     		case 'inorder':
     		$this->_inorder($this->root);
     		break;
-    
-    		// case 'postorder':
-    		// $this->_postorder($this->root);
-    		// break;
-    
-    		// case 'preorder':
-    		// $this->_preorder($this->root);
-    		// break;
-    
+       
     		default:
     		break;
     	} 
@@ -130,35 +122,6 @@ Class BinaryTree { //BinaryTree classの作成
     	}
         return $this->nodeArray; 
     }
-
-    // private function _preorder($node) {
-    
-    // 	echo $node->getData(). " ";
-    
-    // 	if($node->getLeft()) {
-    // 		$this->_preorder($node->getLeft()); 
-    // 	} 
-    
-    
-    // 	if($node->getRight()) {
-    // 		$this->_preorder($node->getRight()); 
-    // 	} 
-    // }
-
-    // private function _postorder($node) {
-    
-    // 	if($node->getLeft()) {
-    // 		$this->_postorder($node->getLeft()); 
-    // 	} 
-    
-    
-    // 	if($node->getRight()) {
-    // 		$this->_postorder($node->getRight()); 
-    // 	} 
-    
-    // 	echo $node->getData(). " ";
-    // }
-
 
     public function addNewData($newNumber) { //add new data
         if ($this->root === null) { //root = null
