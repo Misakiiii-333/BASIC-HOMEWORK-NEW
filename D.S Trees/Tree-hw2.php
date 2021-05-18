@@ -95,9 +95,8 @@ Class BinaryTree { //BinaryTree classの作成
     }
 
     public function traverse($method) {
-    	switch($method) {
-    
-    		case 'inorder':
+    	switch($method) {    
+    	    case 'inorder':
     		$this->_inorder($this->root);
     		break;
     
@@ -111,8 +110,7 @@ Class BinaryTree { //BinaryTree classの作成
     
     		default:
     		break;
-    	} 
-    
+        }     
     } 
     
     private function _inorder($node) {
