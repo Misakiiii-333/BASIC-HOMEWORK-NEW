@@ -264,10 +264,5 @@ $bt = new BinaryTree($root);
 
 // $bt->traverse('inorder');
 $bt->makeTree(new Node(12));
-$bt->makeTree(new Node(33));
-$bt->makeTree(new Node(44));
-$bt->makeTree(new Node(44));
-$bt->makeTree(new Node(44));
-$bt->makeTree(new Node(44));
 $bt->showTheTree();      
 ?>
