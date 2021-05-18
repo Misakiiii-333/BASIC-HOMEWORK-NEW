@@ -20,7 +20,7 @@ function MaxHeapify(&$data, $heapSize, $index) {
   
        MaxHeapify($data, $heapSize, $largest);
     }
- }
+}
   
  function HeapOut(&$data, $count,$k) { //$k = Number of elements to be retrieved
     $heapSize = $count;
