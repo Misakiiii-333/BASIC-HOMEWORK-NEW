@@ -88,10 +88,10 @@ Class BinaryTree { //BinaryTree class
 
     }
 
-    public function getRoot(){
+    public function getRoot() {
         return $this->root;
     }
-    public function setRoot($root){
+    public function setRoot($root) {
         $this->root = $root;
     }
 
