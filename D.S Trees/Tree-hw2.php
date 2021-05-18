@@ -73,7 +73,7 @@ class Node {
         $this->right = $right;
     }
 }
-Class BinaryTree { //BinaryTree classの作成
+Class BinaryTree { //BinaryTree class
     private $root;
     private $arr;
     private $nodeArray;
@@ -84,6 +84,7 @@ Class BinaryTree { //BinaryTree classの作成
         $this->arr = $arr;
         $this->nodeArray = $nodeArray;
         $this->check = true;
+        $this->traverse('inorder'); //Find the number of nodes by traverse.
 
     }
 
@@ -95,22 +96,24 @@ Class BinaryTree { //BinaryTree classの作成
     }
 
     public function traverse($method) {
-    	switch($method) {    
-    	    case 'inorder':
+    	switch($method) {
+    
+    		case 'inorder':
     		$this->_inorder($this->root);
     		break;
     
-    		case 'postorder':
-    		$this->_postorder($this->root);
-    		break;
+    		// case 'postorder':
+    		// $this->_postorder($this->root);
+    		// break;
     
-    		case 'preorder':
-    		$this->_preorder($this->root);
-    		break;
+    		// case 'preorder':
+    		// $this->_preorder($this->root);
+    		// break;
     
     		default:
     		break;
-        }     
+    	} 
+    
     } 
     
     private function _inorder($node) {
@@ -122,63 +125,61 @@ Class BinaryTree { //BinaryTree classの作成
     	echo $node->getData(). " ";
         array_push($this->nodeArray, $node->getData());
 
-    
     	if($node->getRight()) {
     		$this->_inorder($node->getRight()); 
     	}
         return $this->nodeArray; 
     }
 
-    private function _preorder($node) {
+    // private function _preorder($node) {
     
-    	echo $node->getData(). " ";
+    // 	echo $node->getData(). " ";
     
-    	if($node->getLeft()) {
-    		$this->_preorder($node->getLeft()); 
-    	} 
+    // 	if($node->getLeft()) {
+    // 		$this->_preorder($node->getLeft()); 
+    // 	} 
     
     
-    	if($node->getRight()) {
-    		$this->_preorder($node->getRight()); 
-    	} 
-    }
+    // 	if($node->getRight()) {
+    // 		$this->_preorder($node->getRight()); 
+    // 	} 
+    // }
 
-    private function _postorder($node) {
+    // private function _postorder($node) {
     
-    	if($node->getLeft()) {
-    		$this->_postorder($node->getLeft()); 
-    	} 
+    // 	if($node->getLeft()) {
+    // 		$this->_postorder($node->getLeft()); 
+    // 	} 
     
     
-    	if($node->getRight()) {
-    		$this->_postorder($node->getRight()); 
-    	} 
+    // 	if($node->getRight()) {
+    // 		$this->_postorder($node->getRight()); 
+    // 	} 
     
-    	echo $node->getData(). " ";
-    }
+    // 	echo $node->getData(). " ";
+    // }
+
 
     public function addNewData($newNumber) { //add new data
-        if ($this->root === null) { //root = null
+        if ($this->root === null) { //if root = null
             $this->root = new Node($newNumber);
             return;
         }
-        for ($n = 0;$n < count($this->arr);$n++) { 
+        for ($n = 0;$n < count($this->arr)-1;$n++) { 
             if($this->arr[$n] == null) {
                 $this->arr[$n] = new Node($newNumber);
                 break;
             }
         }
-        $i = 0; //初期化
+        $i = 0;
         while ($i < count($this->arr)) {
             $current = $this->arr[$i];
-            // $node = new Node($newNumber);
             if($current->getLeft() === null) { 
                 $current->setLeft(new Node($newNumber));
-                // $current->setLeft($node);
                 array_push($this->arr,$current->getLeft());
                break;
-            } elseif($current->getRight() === null) { //if right node = null
-                $current->setRight(new Node($newNumber)); //add new node
+            } elseif($current->getRight() === null) { //When the right node is empty
+                $current->setRight(new Node($newNumber)); //Add new node to the right node
                 // $current->setRight($node);
                 array_push($this->arr,$current->getRight());
                 break;
@@ -192,19 +193,35 @@ Class BinaryTree { //BinaryTree classの作成
     }
     
     public function arrayPush($newNode) {
-        array_push($this->arr,$newNode); //配列に要素を追加
+        array_push($this->arr,$newNode); //Add an element to the array
     }
 
 
     public function makeTree($node) {
-        $count = 7; //Total number of nodes
-        $num = 2; //hierarchy
-        $currentNode = $this->root; //現在のNode
+        $currentNode = $this->root; //hierarchy Node
+        array_push($this->nodeArray, $node->getData());
+        $count = count($this->nodeArray); //Number of nodes
+        echo "COUNT: ".count($this->nodeArray)."\n";
+        $j = 0;
+        while(true){
+            /**Find the hierarchy you are in.
+             * ex)Where's the seventh node?
+             * →Between 2^2-1 and 3^3-1
+             */
+
+            if($j * $j -1 <= $count && $count < ($j * ($j + 1) -1) { 
+                $num = $j;//hierarchy
+                break;
+            }
+            $j++;
+        }
+        echo "NUM: ".$num."\n";
         $now = 1; //Current hierarchy
         $this->check = true; 
         $this->addLeaf($num, $now, $currentNode, $node);
 
     }
+
 
     public function addLeaf($num, $now, $currentNode, $node) {
         if($now != $num) { //the current hierarchy is not the one you want to insert data into.
@@ -219,7 +236,7 @@ Class BinaryTree { //BinaryTree classの作成
         } else {
             //look at everything from the right first.
             if($currentNode->getRight() == null) {
-                $this->check = false;//I just want to insert it once and be done with it.
+                $this->check = false; //I just want to insert it once and be done with it.
                 $currentNode->setRight($node);
                 return;
             }
@@ -243,7 +260,7 @@ $parent1 = new Node(11, $leaf1);
 $parent2 = new Node(9, $leaf2, $leaf3); 
 $parent3 = new Node(10, $parent1,$parent2); 
 
-$root = $parent3;//追加した
+$root = $parent3;//added.
 $bt = new BinaryTree($root);
 // $bt->traverse('inorder');
 $bt->makeTree(new Node(12));
