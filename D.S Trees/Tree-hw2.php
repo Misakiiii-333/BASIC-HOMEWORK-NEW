@@ -3,13 +3,10 @@
 * A node of Binary Tree (BT)
 */
 class Node {
-    /** @var int */
     private $data;
 
-    /** @var Node left subtree */
     private $left;
 
-    /** @var Node right subtree */
     private $right;
 
     public function __construct($data, $left = null, $right = null)
@@ -19,61 +16,37 @@ class Node {
         $this->right = $right;
     }
 
-    /**
-    * get data
-    * @return int
-    */
     public function getData()
     {
         return $this->data;
     }
 
-    /**
-    * set data
-    * @param int $data
-    */
     public function setData($data)
     {
         $this->data = $data;
     }
 
-    /**
-    * get left
-    * @return Node
-    */
     public function getLeft()
     {
         return $this->left;
     }
 
-    /**
-    * set left
-    * @param Node $left
-    */
     public function setLeft($left)
     {
         $this->left = $left;
     }
 
-    /**
-    * get right
-    * @return Node
-    */
     public function getRight()
     {
         return $this->right;
     }
 
-    /**
-    * set right
-    * @param Node $right
-    */
     public function setRight($right)
     {
         $this->right = $right;
     }
 }
-Class BinaryTree { //BinaryTree classの作成
+Class BinaryTree { 
     private $root;
     private $arr;
     private $nodeArray;
@@ -142,8 +115,7 @@ Class BinaryTree { //BinaryTree classの作成
                 array_push($this->arr,$current->getLeft());
                break;
             } elseif($current->getRight() === null) { 
-                $current->setRight(new Node($newNumber)); //add new node
-                // $current->setRight($node);
+                $current->setRight(new Node($newNumber)); 
                 array_push($this->arr,$current->getRight());
                 break;
             } else {
@@ -156,25 +128,25 @@ Class BinaryTree { //BinaryTree classの作成
     }
     
     public function arrayPush($newNode) {
-        array_push($this->arr,$newNode); //Add an element to the array
+        array_push($this->arr,$newNode); 
     }
 
 
     public function makeTree($node) {
-        $currentNode = $this->root; //current Node
+        $currentNode = $this->root; 
         array_push($this->nodeArray, $node->getData());
-        $count = count($this->nodeArray); //Number of nodes
+        $count = count($this->nodeArray); 
         echo "COUNT: ".count($this->nodeArray)."\n";
         $j = 0;
         while(true){
             if($j * $j -1 <= $count && $count < ($j + 1) * ($j + 1) -1){
-                $num = $j;//階層
+                $num = $j;
                 break;
             }
             $j++;
         }
         echo "NUM: ".$num."\n";
-        $now = 1; //Current hierarchy
+        $now = 1; 
         $this->check = true; 
         $this->addLeaf($num, $now, $currentNode, $node);
 
@@ -182,22 +154,18 @@ Class BinaryTree { //BinaryTree classの作成
 
     public function addLeaf($num, $now, $currentNode, $node) {
         if($now != $num){
-            //look at everything from the right first.
             if($this->check && $currentNode->getRight() != null){
                 $this->addLeaf($num , $now + 1, $currentNode->getRight(), $node);
             }
-            //look all the way to the left.
             if($this->check && $currentNode->getLeft() != null){    
                 $this->addLeaf($num, $now + 1, $currentNode->getLeft(), $node);
             }
         }else{
-            //look at everything from the right first.
             if($currentNode->getRight() == null){
                 $this->check = false;
                 $currentNode->setRight($node);
                 return;
             }
-            //look all the way to the left.
             else if($currentNode->getLeft() == null){
                 $this->check = false;
                 $currentNode->setLeft($node);
@@ -219,13 +187,11 @@ $parent1 = new Node(11, $leaf1);
 $parent2 = new Node(9, $leaf2, $leaf3); 
 $parent3 = new Node(10, $parent1,$parent2); 
 
-$root = $parent3;//追加した
+$root = $parent3;
 
 $bt = new BinaryTree($root);
 
 
-
-// $bt->traverse('inorder');
 $bt->makeTree(new Node(12));
 $bt->showTheTree();      
 ?>
