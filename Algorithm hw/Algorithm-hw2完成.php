@@ -38,7 +38,6 @@ function findSmallestPair($array1, $array2, $k) {
         echo "[{$array1[$minIndex]}, {$array2[$index2[$minIndex]]}] ";
         //Moving next element of array2
         $index2[$minIndex]++;
-
         // Exit the while statement when K is required.
         $k--;
     }
