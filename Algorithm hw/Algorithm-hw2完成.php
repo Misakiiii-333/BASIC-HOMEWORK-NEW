@@ -58,8 +58,7 @@ function partition(&$array, $left, $right) {
             $i++;
             $j--;
         }
-    }
- 
+    } 
     return $i;
 }
 
