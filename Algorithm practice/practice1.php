@@ -23,7 +23,7 @@ function smallest_pair($arr, $n)
 }
  
 // Driver code
-$arr = array(8, 4, 6, 3, 7, 15, 2, 3, 10);
+$arr = array(11, 4, 8, 3, 7, 15, 2, 20, 10);
 $n = sizeof($arr);
 echo smallest_pair($arr, $n);
  
