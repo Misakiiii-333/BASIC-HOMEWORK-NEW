@@ -1,4 +1,5 @@
 <?php
+// Find the two smallest numbers in the array and sum the numbers.
 
 function smallest_pair($arr, $n)
 {
