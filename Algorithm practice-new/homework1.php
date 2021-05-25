@@ -1,6 +1,6 @@
 <?php
 function findLargestSumPair($arr, $n) {
-    
+    // Initialize Max and Second Max element
     $max;
     $secondMax;
      
@@ -14,8 +14,7 @@ function findLargestSumPair($arr, $n) {
 
     for ( $i = 2; $i < $n; $i ++) {
  
-        if ($arr[$i] > $max)
-        {
+        if ($arr[$i] > $max) {
             $secondMax = $max;
             $max = $arr[$i];
         } else if ($arr[$i] > $secondMax and $arr[$i] != $max) {
@@ -24,7 +23,6 @@ function findLargestSumPair($arr, $n) {
     }
     return ($max + $secondMax);
 }
- 
     // Driver Code
     $arr = array(0, 2, 1, 9, 7);
     $n = count($arr);
