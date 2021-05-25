@@ -1,4 +1,11 @@
 <?php 
+function swap(&$a, &$b)
+{ 
+    $temp = $a; 
+    $a = $b; 
+    $b = $temp; 
+} 
+
 function partition(&$array, $left, $right) {
     $pivot = $array[$right];
     $i = $left -1;
