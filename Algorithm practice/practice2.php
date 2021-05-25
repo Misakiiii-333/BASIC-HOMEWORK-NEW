@@ -1,22 +1,16 @@
 <?php
-//整数の2つの配列が与えられたとき，差が最小の値のペアを計算。その差を返す。
-function printMinimumProduct($arr, $n)
-{
+
+function printMinimumProduct($arr, $n) {
      
-    // 第一、第二の最小値を初期化する。配列には少なくとも2つの要素があると仮定。
     $first_min = min($arr[0], $arr[1]);
     $second_min = max($arr[0], $arr[1]);
  
-    // 残りの配列を走査し，2つの最小要素を追跡する
-    //（最小要素が複数回現れる場合は，2つの最小要素が同じになることがあることに注意)
     for ($i = 2; $i < $n; $i++)
     {
-        if ($arr[$i] < $first_min)
-        {
+        if ($arr[$i] < $first_min) {
             $second_min = $first_min;
             $first_min = $arr[$i];
-        }
-        else if ($arr[$i] < $second_min)
+        } else if ($arr[$i] < $second_min) {
             $second_min = $arr[$i];
     }
  
