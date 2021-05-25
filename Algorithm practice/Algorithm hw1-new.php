@@ -17,7 +17,7 @@ function largest_pair($arr, $n) {
 }
  
 // Driver code
-$arr = array(0, 2, 1, 9, 7;
+$arr = array(0, 2, 1, 9, 7);
 $n = sizeof($arr);
 echo largest_pair($arr, $n);
  
