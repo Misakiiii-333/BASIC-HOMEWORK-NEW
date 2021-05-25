@@ -26,6 +26,7 @@ function findLargestSumPair($arr, $n) {
     // Driver Code
     $arr = array(0, 2, 1, 9, 7);
     $n = count($arr);
-    echo "Largest Pair Sum : ",findLargestSumPair($arr, $n);
+    echo "Largest Pair Sum : ";
+    echo findLargestSumPair($arr, $n);
  
 ?>
