@@ -1,4 +1,5 @@
 CREATE TABLE new_agents AS
+/*Combine duplicate records into one.*/
 SELECT DISTINCT 
     agents.*
 FROM 
