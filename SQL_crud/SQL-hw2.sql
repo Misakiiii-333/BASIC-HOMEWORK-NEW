@@ -1,4 +1,5 @@
-UPDATE agents
+UPDATE 
+    agents
 SET 
     COMMISSION = COMMISSION -.02
 WHERE 
