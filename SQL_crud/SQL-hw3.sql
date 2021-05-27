@@ -1,5 +1,7 @@
-SELECT *
-FROM customer
+SELECT 
+    *
+FROM 
+    customer
     JOIN agents
         ON customer.AGENT_CODE = agents.AGENT_CODE
 WHERE customer.GRADE = 3
