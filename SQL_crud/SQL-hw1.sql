@@ -1,5 +1,5 @@
-CREATE TABLE new agents
-SELECT agents.*
+CREATE TABLE new agents AS
+SELECT DISTINCT agents.*
 FROM agents,customer
 WHERE 
     agents.WORKING_AREA = 'LONDON'
