@@ -1,7 +1,7 @@
 CREATE TABLE new_agents AS
 /*Combine duplicate records into one.*/
 SELECT DISTINCT 
-    agents.*
+    agents.* --I see all of the agents.
 FROM 
     agents,customer
 WHERE 
