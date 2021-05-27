@@ -3,9 +3,10 @@ SELECT
     count(agent_name) AS COUNT_AGENT_NAME
 FROM
     agents
-HAVING 
-    count(agent_name) < 3
 GROUP BY
     working_area 
+HAVING 
+    count(COUNT_AGENT_NAME) < 3
+
 ORDER BY 
-    AVG_COMMISION.COUNT_AGENT_NAME DESC;
+    AVG_COMMISION,COUNT_AGENT_NAME DESC;
