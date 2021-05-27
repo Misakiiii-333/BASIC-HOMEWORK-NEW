@@ -1,5 +1,6 @@
 CREATE TABLE new_agents AS
-SELECT DISTINCT agents.*
+SELECT DISTINCT 
+    agents.*
 FROM 
     agents,customer
 WHERE 
