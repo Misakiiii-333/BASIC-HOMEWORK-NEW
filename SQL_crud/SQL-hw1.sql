@@ -9,5 +9,5 @@ AND
     customer.CUST_COUNTRY = 'UK'
 AND 
     agents.AGENT_CODE = customer.AGENT_CODE;
-
+--added PRIMARY KEY
 ALTER TABLE new _agents ADD PRIMARY KEY(AGENT_CODE);
