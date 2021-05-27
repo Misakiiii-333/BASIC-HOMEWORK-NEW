@@ -1,5 +1,7 @@
-UPDATE agents
-SET COMMISSION = COMMISSION +.02
+UPDATE 
+    agents
+SET 
+    COMMISSION = COMMISSION +.02
 WHERE
     AGENT_CODE IN (
         SELECT agents.AGENT_CODE
@@ -10,6 +12,5 @@ WHERE
             FROM 
                 customer
             WHERE 
-            customer.AGENT_CODE = agents.AGENT_CODE
-        ) >= 2
+                customer.AGENT_CODE = agents.AGENT_CODE) >= 2
         );
