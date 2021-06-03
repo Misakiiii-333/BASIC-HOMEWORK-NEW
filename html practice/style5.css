@@ -1,0 +1,49 @@
+/* .normal {
+    background-color: coral;
+}
+.box {
+    background-color: pink;
+
+/* content box */
+/* width: 200px;
+height: 200px; 
+
+/*padding box*/
+/* padding: 8px 12px 16px 20px; */
+
+/*margin box*/
+/* margin: 8px 12px 16px 20px; */
+/* margin-bottom:20px; */
+/*boder box*/
+/* border: 5px solid black; */ 
+
+/* box-sizing: border-box;
+
+} */
+
+/* .margin {
+    background-color: lightblue;
+    margin-top: 20px;
+}  */
+
+/* div,span {
+    background-color: orange;
+    width:100px;
+    height:100px;  
+}
+*/
+
+/* padding,margin,borderの挙動/inline-block */
+
+.example {
+    background-color: pink;
+    padding: 20px;
+}
+.example span {
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: lightgreen;
+}
+

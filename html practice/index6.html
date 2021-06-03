@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Recruitment Form</title>
+</head>
+<body>
+    <h1>Recruitment Form</h1>
+    <form action="receive4.html" method="post">
+    <dl>
+        <dt>name</dt>
+        <dd>
+            <input type="text" name="your_name">
+        </dd>
+        <dt>mail adress</dt>
+        <dd>
+            <input type="mail" name="your_email">
+
+        </dd>
+        <dt>Desired job title</dt>
+        <dd>
+            <select name="job">
+                <option value="Webディレクター">Web Director</option>
+                <option value="Webデザイナー">Web Designer</option>
+                <option value="Webプログラマー">Webprogrammer</option>
+                <option value="フロントエンド・エンジニア">Front End Engineer</option>
+            </select>
+        </dd>
+        <dt>Gender</dt>
+        <dd>
+            <ul>
+                <li><input type="radio" name="gender" value="男">male</li>
+                <li><input type="radio" name="gender" value="女">female</li>
+            </ul>
+        </dd>
+    <dt>What you can do?(Multiple choices available)</dt>
+    <dd>
+        <ul>
+            <li><input type="checkbox" name="skill" value="HTML">HTML</li>
+            <li><input type="checkbox" name="skill" value="CSS">CSS</li>
+            <li><input type="checkbox" name="skill" value="Java">JavaScript</li>
+            <li><input type="checkbox" name="skill" value="PHP">PHP</li>
+            <li><input type="checkbox" name="skill" value="SQL">SQL</li>
+            <li><input type="checkbox" name="skill" value="PhotoShop">PhotoShop</li>
+            <li><input type="checkbox" name="skill" value="illustrator">illustrator</li>
+        </ul>
+    </dd>
+    <dt>message</dt>
+    <dd>
+        <textarea name="message" cols="40" rows="8"></textarea>
+    </dd>
+    </dl>
+    <p><input type="submit" value="Sending"></p>
+</form>
+</body>
+</html>

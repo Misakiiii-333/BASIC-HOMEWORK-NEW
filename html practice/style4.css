@@ -1,0 +1,43 @@
+/* #title {
+    color: red;
+}
+.a {
+    color: blue;
+}
+h1 {
+    color: green;
+} */
+
+スコアリング
+#title {
+    color:red;
+}
+.a.b.c.d.e.f.g.h.i.j.k {
+    color:blue;
+}
+h1 {
+    color:coral !important;
+}
+
+/*継承*/
+li {
+    color:red;
+}
+li a[href*="google"] {
+    color: inherit;
+}
+li a[href*="youtube"] {
+    color: initial;
+}
+li a[href*"apple"] {
+    color: unset;
+}
+
+div {
+    background-color: orange;
+    border: 3px solid black;
+}
+.fix {
+    background-color: initial;
+    border:initial;
+}
