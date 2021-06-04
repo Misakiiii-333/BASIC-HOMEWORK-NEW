@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><link rel="stylesheet" href="normalize.css">
+	<meta charset="utf-8">
+	<title>My web page</title>
+	<link rel="stylesheet" href="index.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	
+	<script src="index.js"></script>
+</head>
+  <body>
+	  <!-- The Header -->
+    <header> 
+        <div>
+          <h4>The logo</h4>
+        </div>
+        <div>
+            <h2 class="slogan">The header slogan</h2>
+        </div>
+    <div id="form">
+        <ul>
+            <li>Hi <span>Guest</span> !</li>
+            <li><a href="javascript:void(0)" onclick="showLoginForm()">Login</a></li>
+        </ul>
+ 
+        <!-- login form -->
+        <form id="login">
+            <input type="text" name="username" placeholder="User name" />
+            <input type="password" name="password" placeholder="Password"/>
+            <label><input type="checkbox" name="rememberUsername" />Remember user name </label>
+            <button type="submit" name="Login">Login</button>
+        </form>
+        <!-- search form -->
+        <form method="GET" id="search">
+            <input type="text" name="keyword" />
+            <i class="material-icons">search</i>
+        </form>
+    </div>
+    </header>
+
+	  
+	  <!-- The menu -->
+	  <nav>
+		    <ul>
+			    <li>Menu 1</li>
+			    <li>Menu 2</li>
+			    <li>Menu 3</li>
+			    <li>Menu 4</li>
+		   </ul>
+	  </nav>
+	  
+	  <!-- main content start -->
+
+	  <div id="main">
+			<div id="main-content">
+				<h3> user</h3>
+                <table>
+					<tr>
+						<th>ID</th>
+						<th>Fullname</th>
+						<th>Username</th>
+						<th>Email</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Doloremque Laudantium</td>
+						<td>doloremque</td>
+						<td>doloremque@example.com</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Nemo enim</td>
+						<td>nemo</td>
+						<td>nemo@example.com</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Adipisci Velit</td>
+						<td>adipisci</td>
+						<td>adipisci velit@example.com</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>pascalia　asia</td>
+						<td>pascalia_asia</td>
+						<td>pascalia.asia@example.com</td>
+					</tr>
+				</table>
+
+				<h3> profile</h3>
+
+                <table>
+					<tr>
+						<th>Fullname</th>
+						<th>Birthplace</th>
+						<th>hobby</th>
+					</tr>
+					<tr>
+					
+						<td>Doloremque Laudantium</td>
+						<td>New Zealand</td>
+						<td>Fishing</td>
+						
+					</tr>
+					<tr>
+						<td>Nemo enim</td>
+						<td>United States</td>
+						<td>playing game</td>
+					</tr>
+					<tr>				
+						<td>Adipisci Velit</td>
+						<td>Vietnam</td>
+						<td>Listening to music</td>
+					</tr>
+					<tr>
+						<td>pascalia　asia</td>
+						<td>Japan</td>
+						<td>drawing pictures</td>
+					</tr>
+				</table>
+
+
+			</div>
+			<!-- side bar -->
+			<div id="sidebar">
+				<h3> Sidebar </h3>
+				<ul>
+					<li>Feature 1</li>
+					<li>Feature 2</li>
+					<li>Feature 3</li>
+					<li>Feature 4</li>
+					<li>Feature 5</li>
+					<li>Feature 6</li>
+				</ul>
+			</div>
+	  </div>
+	  
+	<!-- main content end -->
+	  
+	<footer>
+		<ol>
+			<li>Extra info 1</li>
+			<li>Extra info 1</li>
+		</ol>
+
+		<h3> The footer</h3>
+
+
+		<div id="scroll"> 
+
+			<a href="javascript:void(0)" onclick="scrollToTop()"> 
+				<i class="material-icons">arrow_drop_up</i>
+			</a>
+		</div>
+
+		<small>
+			<script type="text/JavaScript">
+				time = new Date(2021,(6-1),3);
+				time=Math.ceil((time.getTime()-new Date().getTime())/86400000);
+				document.write('サイト設立から、'+-(time)+'日経ちました。');
+				
+			</script>
+		</small>
+        
+	</footer>
+
+    </body>
+</html>
